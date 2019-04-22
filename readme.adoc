@@ -1,8 +1,8 @@
 = BI-Query to Power-BI Migration
 John Schuster <John.schuster@PhoenixWorkgroup.com>
-v2.1b, 04/22/2019: Doco Type
+v2.1b, 04/22/2019: Research Notes
 :Author: John HR Schuster
-:Company: Phoenix Learning Labs
+:Company: Phoenix Workgroup for Optum Government system
 :toc: left
 :toclevels: 4:
 :imagesdir: ./images
@@ -12,17 +12,33 @@ v2.1b, 04/22/2019: Doco Type
 :experimental:
 :source-hightlighter: coderay
 :icons: font
-:docdir: */documents
-:github: https://github.com/GeekMustHave/Github repository
+:github: https://github.com/GeekMustHave/biq2pbi
 :linkattrs:
 :seclinks:
-:title-logo-image: ./images/create-doco_gmh-blogArticle-cover.png
+:title-logo-image: ./images/create-doco_optum-cover.png
 
-Preamble paragraph goes here
+Research notes on converting or migrating BI-Qurty models into Microsoft Power-BI models.
+
+A PDF copy of this document can be obtained from this link:./readme.pdf[ link,window='_blank'] 
+
+NOTE: This document does *NOT* contain any PHI information.
 
 == Introduction
 
+BI-Query aka GQL has been around for 25+ years.  It is still one of the best `Query` tools for SQL detail queries.
 
+Power-BI from Microsoft is a Business Intelligence tool that could benefit from the work done to create the BI-Query Models.
+
+This effort is to see if it is possible to take exported BI-Query models and use them to help define Power-BI models with the identical attributes.
+
+
+== BI-Query model
+
+The BI-Query model is a binary object and is difficult to read.
+
+Bi-Query does have the method to export the model to a text file which if formatted correctly could be used for the migration.
+
+An example of the exported BI-Query model can be found at this link:./documents/BIQ-Model.txt[ link,window='_blank']
 
 
 
