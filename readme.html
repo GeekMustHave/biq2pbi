@@ -446,8 +446,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_introduction">1. Introduction</a></li>
-<li><a href="#_bi_query_model">2. BI-Query model</a></li>
-<li><a href="#_document_history">3. Document History</a></li>
+<li><a href="#_bi_query_model">2. BI-Query model</a>
+<ul class="sectlevel2">
+<li><a href="#_hierarchy">2.1. Hierarchy</a></li>
+</ul>
+</li>
+<li><a href="#_bi_query_points">3. BI-Query Points</a></li>
+<li><a href="#_application_prep">4. Application Prep</a>
+<ul class="sectlevel2">
+<li><a href="#_node_libraries">4.1. Node Libraries</a>
+<ul class="sectlevel3">
+<li><a href="#_user_interface">4.1.1. User Interface</a></li>
+<li><a href="#_reading_files">4.1.2. Reading files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_document_history">5. Document History</a></li>
 </ul>
 </div>
 </div>
@@ -498,16 +513,177 @@ This document does <strong>NOT</strong> contain any PHI information.
 <p>Bi-Query does have the method to export the model to a text file which if formatted correctly could be used for the migration.</p>
 </div>
 <div class="paragraph">
-<p>An example of the exported BI-Query model can be found at this <a href="./documents/BIQ-Model.txt" target="_blank" rel="noopener">link</a></p>
+<p>An example of the exported BI-Query model can be found at this <a href="./documents/MegaModel.txt" target="_blank" rel="noopener">link</a></p>
+</div>
+<div class="sect2">
+<h3 id="_hierarchy">2.1. Hierarchy</h3>
+<div class="paragraph">
+<p>There is a hierarchy of sections for a BIQ model.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Heading</p>
+</li>
+<li>
+<p>Statistics</p>
+</li>
+<li>
+<p>Connections</p>
+</li>
+<li>
+<p>Permissions</p>
+</li>
+<li>
+<p>Preferences</p>
+</li>
+<li>
+<p>Metadata Help</p>
+</li>
+<li>
+<p>Path variables</p>
+</li>
+<li>
+<p>Prompts</p>
+</li>
+<li>
+<p>Variables</p>
+</li>
+<li>
+<p>Design Windows</p>
+</li>
+<li>
+<p><code>window name</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Relationships - followed by <code>Join Condition</code></p>
+</li>
+<li>
+<p>Tables - followed by <code>Database Table Name</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bi_query_points">3. BI-Query Points</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are a number of text-based points that help to define where metadata about the <a href="#BIQ">[BIQ]</a> model that are helpful to <a href="#PBI">[PBI]</a>.</p>
+</div>
+<div class="paragraph">
+<p>One issue is that the model has (TAB) characters and not spaces.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Points Reference</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Point Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Point Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Point Text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start Pos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Length</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">srelation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start of relationships</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{tab}Relationships</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">poop</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start pooping</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">poop</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_application_prep">4. Application Prep</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The BIQ2PBI utility will be written in Node as a CLI application.</p>
+</div>
+<div class="paragraph">
+<p>Initially it will read in a designated file with a <code>*.txt</code> extension.</p>
+</div>
+<div class="sect2">
+<h3 id="_node_libraries">4.1. Node Libraries</h3>
+<div class="sect3">
+<h4 id="_user_interface">4.1.1. User Interface</h4>
+<div class="paragraph">
+<p>I have been very happy when developing CLI NODE app&#8217;s in using the following libraries</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Chalk - Terminal string styling done right</p>
+</li>
+<li>
+<p>clear - Clear the terminal screen if possible</p>
+</li>
+<li>
+<p>figlet - Creates ASCII Art from text. A full implementation of the FIGfont spec.</p>
+</li>
+<li>
+<p>inquirer - A collection of common interactive command line user interfaces.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These will all be installed with NPM and the <code>--save</code> option to put dependicies in the package.json file.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>npm install --save chalk clear figlet inquirer</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_reading_files">4.1.2. Reading files</h4>
+<div class="paragraph">
+<p>In past experiments I have read files into a sting in the app and read through the string.
+The OUT files here can be quite large as the number of request and test set expands.</p>
+</div>
+<div class="paragraph">
+<p>The alternative is a module <code>line-reader</code>, Asynchronous, buffered, line-by-line file/stream reader with support for user-defined line separators.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>npm install --save line-reader</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The eachLine function reads each line of the given file. Upon each new line, the given callback function is called with two parameters:
+the line read and a boolean value specifying whether the line read was the last line of the file.
+If the callback returns false, reading will stop and the file will be closed.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="_document_history">3. Document History</h2>
+<h2 id="_document_history">5. Document History</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Document History</caption>
+<caption class="title">Table 2. Document History</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -537,7 +713,7 @@ This document does <strong>NOT</strong> contain any PHI information.
 <div id="footer">
 <div id="footer-text">
 Version 2.1b<br>
-Last updated 2019-04-22 11:15:50 -0400
+Last updated 2019-04-22 12:44:05 -0400
 </div>
 </div>
 </body>

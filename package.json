@@ -1,0 +1,26 @@
+{
+  "name": "biq2pbi",
+  "version": "1.0.0",
+  "description": "BI-Query to Power-BI Migration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeekMustHave/biq2pbi.git"
+  },
+  "author": "John HR Schuster",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GeekMustHave/biq2pbi/issues"
+  },
+  "homepage": "https://github.com/GeekMustHave/biq2pbi#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.3.1",
+    "line-reader": "^0.4.0"
+  }
+}

@@ -38,7 +38,75 @@ The BI-Query model is a binary object and is difficult to read.
 
 Bi-Query does have the method to export the model to a text file which if formatted correctly could be used for the migration.
 
-An example of the exported BI-Query model can be found at this link:./documents/BIQ-Model.txt[ link,window='_blank']
+An example of the exported BI-Query model can be found at this link:./documents/MegaModel.txt[ link,window='_blank']
+
+=== Hierarchy
+
+There is a hierarchy of sections for a BIQ model.
+
+* Heading
+* Statistics
+* Connections
+* Permissions
+* Preferences 
+* Metadata Help
+* Path variables
+* Prompts
+* Variables
+* Design Windows
+* `window name`
+** Relationships - followed by `Join Condition`
+** Tables - followed by `Database Table Name`
+
+
+== BI-Query Points
+
+There are a number of text-based points that help to define where metadata about the <<BIQ>> model that are helpful to <<PBI>>.
+
+One issue is that the model has (TAB) characters and not spaces.
+
+.Points Reference
+
+|===
+| Point Name | Point Description | Point Text | Start Pos | Length 
+| srelation | Start of relationships | {tab}Relationships | 3 | 13
+| poop | Start pooping | poop | 1 | 4
+|===
+
+== Application Prep
+
+The BIQ2PBI utility will be written in Node as a CLI application.
+
+Initially it will read in a designated file with a `*.txt` extension.
+
+=== Node Libraries
+
+==== User Interface
+
+I have been very happy when developing CLI NODE app's in using the following libraries
+
+* Chalk - Terminal string styling done right
+* clear - Clear the terminal screen if possible
+* figlet - Creates ASCII Art from text. A full implementation of the FIGfont spec.
+* inquirer - A collection of common interactive command line user interfaces.
+
+These will all be installed with NPM and the `--save` option to put dependicies in the package.json file.
+
+ npm install --save chalk clear figlet inquirer
+
+
+==== Reading files
+
+In past experiments I have read files into a sting in the app and read through the string.
+The OUT files here can be quite large as the number of request and test set expands.
+
+The alternative is a module `line-reader`, Asynchronous, buffered, line-by-line file/stream reader with support for user-defined line separators.
+
+  npm install --save line-reader
+
+The `eachLine` function reads each line of the given file. Upon each new line, the given callback function is called with two parameters: 
+the line read and a boolean value specifying whether the line read was the last line of the file. 
+If the callback returns false, reading will stop and the file will be closed. 
 
 
 
